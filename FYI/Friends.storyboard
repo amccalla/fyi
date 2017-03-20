@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YPY-pG-HLl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="GtZ-Ug-PPy">
+            <objects>
+                <viewController id="JOi-gh-hWl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QAP-55-c1t"/>
+                        <viewControllerLayoutGuide type="bottom" id="yWL-fP-Gzl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Abh-Jp-dTg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wgx-LX-LEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="-615"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQ3-s8-0Ao">
+            <objects>
+                <navigationController id="YPY-pG-HLl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fet-Up-Txq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.67221767509999997" blue="0.24813300190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.67221767509999997" blue="0.24813300190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8NQ-BG-q9m" kind="relationship" relationship="rootViewController" id="EwQ-Ri-yVF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhk-Mr-Kca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="95"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="tt3-md-Hps">
+            <objects>
+                <viewController storyboardIdentifier="friendsList" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8NQ-BG-q9m" customClass="FriendsListViewController" customModule="FYI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TBU-tr-vrb"/>
+                        <viewControllerLayoutGuide type="bottom" id="oaR-Fd-mXk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E02-73-0la">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g4V-21-tQN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8NQ-BG-q9m" id="ag9-mz-joI"/>
+                                    <outlet property="delegate" destination="8NQ-BG-q9m" id="rxw-mA-vWY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="g4V-21-tQN" secondAttribute="trailing" constant="-16" id="2yu-Vk-F26"/>
+                            <constraint firstItem="g4V-21-tQN" firstAttribute="top" secondItem="TBU-tr-vrb" secondAttribute="bottom" id="EC7-JM-zuo"/>
+                            <constraint firstItem="g4V-21-tQN" firstAttribute="leading" secondItem="E02-73-0la" secondAttribute="leadingMargin" constant="-16" id="HvW-zB-R8V"/>
+                            <constraint firstItem="oaR-Fd-mXk" firstAttribute="top" secondItem="g4V-21-tQN" secondAttribute="bottom" constant="-44" id="zPB-Lm-FiO"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Friends" id="iQR-Bm-yOY">
+                        <barButtonItem key="leftBarButtonItem" image="accounticon" id="qCn-fm-yUu">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="JOi-gh-hWl" kind="show" identifier="accountView" id="rwQ-eS-hPK">
+                                    <nil key="action"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="addIcon" id="7G2-Z3-Hg1">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="IS9-Js-gwH" kind="show" id="5u2-Rn-Gca">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" image="sendArrow" id="uaD-Qq-9t3">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="I7E-L3-uNm" kind="show" identifier="sendFyi" id="4pB-fa-h6v"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="friendsTableView" destination="g4V-21-tQN" id="LsU-1f-fTj"/>
+                        <outlet property="sendFyiButton" destination="uaD-Qq-9t3" id="ea1-aZ-5p7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULg-AU-TKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991.20000000000005" y="94.902548725637189"/>
+        </scene>
+        <!--Send Fyi View Controller-->
+        <scene sceneID="iK1-5y-Wr4">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="I7E-L3-uNm" customClass="SendFyiViewController" customModule="FYI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XvK-bW-4Vi"/>
+                        <viewControllerLayoutGuide type="bottom" id="tuh-Cc-UfE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="03W-RI-zWj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pw8-lW-BL8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="9O8-jj-wFT">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9O8-jj-wFT" id="Twy-oa-sZC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="I7E-L3-uNm" id="x9p-bg-hCo"/>
+                                    <outlet property="delegate" destination="I7E-L3-uNm" id="dHt-VB-VY0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pw8-lW-BL8" secondAttribute="trailing" constant="-16" id="2iw-in-6xd"/>
+                            <constraint firstItem="pw8-lW-BL8" firstAttribute="leading" secondItem="03W-RI-zWj" secondAttribute="leadingMargin" constant="-16" id="73x-F6-sr4"/>
+                            <constraint firstItem="pw8-lW-BL8" firstAttribute="top" secondItem="XvK-bW-4Vi" secondAttribute="bottom" id="W4H-Xw-vNx"/>
+                            <constraint firstItem="tuh-Cc-UfE" firstAttribute="top" secondItem="pw8-lW-BL8" secondAttribute="bottom" id="lZj-ga-0Ot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XhE-AY-Lgw">
+                        <barButtonItem key="leftBarButtonItem" image="backIcon" id="1Vq-yx-DbH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="I7E-L3-uNm" id="brC-v9-lbU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="sendArrow" id="ZMd-4C-7YK">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="sendFyiButtonPressed:" destination="I7E-L3-uNm" id="eno-UA-m58"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fyiTableView" destination="pw8-lW-BL8" id="om3-Ia-c3H"/>
+                        <segue destination="cxZ-ew-d8Q" kind="unwind" identifier="unwindToFriendsList" unwindAction="unwindToFriendsListWithSegue:" id="gQx-6p-EDk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ey9-nu-V4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cxZ-ew-d8Q" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="989.60000000000002" y="833.43328335832086"/>
+        </scene>
+        <!--Add Friends-->
+        <scene sceneID="fTq-YI-Lpc">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="IS9-Js-gwH" customClass="AddFriendsViewController" customModule="FYI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gnc-qr-YQ1"/>
+                        <viewControllerLayoutGuide type="bottom" id="AsS-Zo-MR5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZpY-ei-kbu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-0v-Dsa">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IS9-Js-gwH" id="wEc-Wv-LZB"/>
+                                    <outlet property="delegate" destination="IS9-Js-gwH" id="jL1-x6-Oxg"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search People" translatesAutoresizingMaskIntoConstraints="NO" id="Ttt-gz-y9w">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AsS-Zo-MR5" firstAttribute="top" secondItem="nSg-0v-Dsa" secondAttribute="bottom" constant="-44" id="6iM-oj-WzK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nSg-0v-Dsa" secondAttribute="trailing" constant="-16" id="92m-78-fCX"/>
+                            <constraint firstItem="nSg-0v-Dsa" firstAttribute="leading" secondItem="ZpY-ei-kbu" secondAttribute="leadingMargin" constant="-16" id="GjP-0Z-1vC"/>
+                            <constraint firstItem="Ttt-gz-y9w" firstAttribute="top" secondItem="Gnc-qr-YQ1" secondAttribute="bottom" id="HwU-Te-t5q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ttt-gz-y9w" secondAttribute="trailing" constant="-16" id="JS2-hW-kMr"/>
+                            <constraint firstItem="Ttt-gz-y9w" firstAttribute="leading" secondItem="ZpY-ei-kbu" secondAttribute="leadingMargin" constant="-16" id="c95-Ho-78p"/>
+                            <constraint firstItem="nSg-0v-Dsa" firstAttribute="top" secondItem="Ttt-gz-y9w" secondAttribute="bottom" id="vJF-Dx-5MS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Friends" id="wmD-eq-tBa">
+                        <barButtonItem key="leftBarButtonItem" image="backIcon" id="uAt-fr-tcm">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="IS9-Js-gwH" id="JHO-GF-CMY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Ttt-gz-y9w" id="EQJ-b0-fkI"/>
+                        <outlet property="usernameTableView" destination="nSg-0v-Dsa" id="7p8-dK-JIN"/>
+                        <segue destination="INm-Ul-uEs" kind="unwind" identifier="unwindToFriendsList" unwindAction="unwindToFriendsListWithSegue:" id="iki-Yx-4o5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GM2-d5-QYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="INm-Ul-uEs" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="accounticon" width="24" height="24"/>
+        <image name="addIcon" width="24" height="24"/>
+        <image name="backIcon" width="24" height="24"/>
+        <image name="sendArrow" width="24" height="24"/>
+    </resources>
+</document>
